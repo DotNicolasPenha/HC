@@ -1,0 +1,3 @@
+
+input -> hc run @hello:index
+output -> [status: 200] hello!
