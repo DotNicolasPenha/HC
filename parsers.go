@@ -17,7 +17,7 @@ func parseHCAFile(filePath string) (map[string]HCACaller, error) {
 
 	callers := make(map[string]HCACaller)
 
-	reCaller := regexp.MustCompile(`@(\w+):(\w+)[\s\S]*?m:\s*(\w+)[\s\S]*?p:\s*(\S+)[\s\S]*?h:\s*(\{.*?\})[\s\S]*?j:\s*(\{.*?\})`)
+	reCaller := regexp.MustCompile(`@(\w+):(\w+)[\s\S]*?m:\s*(\w+)[\s\S]*?p:\s*(\S+)[\s\S]*?h:\s*(\{[\s\S]*?\})[\s\S]*?j:\s*(\{[\s\S]*?\})`)
 	matches := reCaller.FindAllStringSubmatch(content, -1)
 
 	for _, m := range matches {
